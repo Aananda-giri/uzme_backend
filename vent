@@ -1,1 +1,11 @@
 overpass-turbo.eu
+- port forwarding
+ngrok.com
+./ngrok <protocol> <port>
+./ngrok http 8888
+./ngrok help
+
+- notification
+- delete user
+- map implementation
+

@@ -13,13 +13,14 @@ class UserRecordView(APIView):
     a POST request allows to create a new user.
     """
     permission_classes = [IsAdminUser]
-
+    # get list of all existing users
     def get(self, format=None):
         users = User.objects.all()
         serializer = UserSerializer(users, many=True)
         return Response(serializer.data)
-
+    # create new user
     def post(self, request):
+        # print(f'\n post_invoked: {data} \n')
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid(raise_exception=ValueError):
             serializer.create(validated_data=request.data)

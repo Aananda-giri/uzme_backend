@@ -1,0 +1,38 @@
+import requests
+headers = {
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+}
+
+payload = {
+    "username": "nathan",
+    "password": "nathan"
+}
+
+r = requests.post('http://localhost:8000/api-token-auth/', data=payload, headers=headers)
+print(r.text)
+token=r.json()['token']
+
+
+
+
+# get all users
+import requests
+headers = {
+  'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.12; rv:55.0) Gecko/20100101 Firefox/55.0',
+  "Authorization": f"TOKEN {token}"
+}
+
+
+r = requests.get('http://127.0.0.1:8000/api/user/', headers=headers)
+print(r.text)
+
+# create new user
+payload = {
+  "username": "krashis",
+  "first_name": "krashis",
+  "last_name": "adhikarri",
+  "email": "krashisadhikari@gmail.com",
+  "password": "krashis"
+ }
+r = requests.post('http://127.0.0.1:8000/api/user/', data=payload,headers=headers)
+

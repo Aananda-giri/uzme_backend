@@ -16,10 +16,35 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+
+
+from fcm_django.api.rest_framework import FCMDeviceAuthorizedViewSet
+from rest_framework.routers import DefaultRouter
+router = DefaultRouter()
+router.register('devices', FCMDeviceAuthorizedViewSet)
 from rest_framework.authtoken import views
+from api.views import *
 
 urlpatterns = [
+    # URLs will show up at <api_root>/devices
+    # DRF browsable API which lists all available endpoints
+    path('api/', include(router.urls)), # for firebase notification
     path('admin/', admin.site.urls),
-    path('api/', include('api.urls', namespace='api')),
+    path('api_auth/', include('api.urls', namespace='api')), # for authentication
     path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
+    # path('home/', index)
 ]
+
+# import firebase_admin
+# from firebase_admin import credentials, messaging
+# firebase_cred = credentials.Certificate("firebase.json")
+# firebase_app = firebase_admin.initialize_app(firebase_cred)
+
+from fcm_django.models import FCMDevice
+device = FCMDevice.objects.all().first()
+device.send_message("Title", "Message")
+device.send_message(data={"test": "test"})
+device.send_message(title="Title", body="Message", icon=..., data={"test": "test"})
+
+from firebase_admin import initialize_app
+initialize_app(name=)

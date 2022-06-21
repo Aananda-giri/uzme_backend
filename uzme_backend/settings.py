@@ -25,11 +25,11 @@ SECRET_KEY = 'django-insecure-g&+za=$l)gd#5g#!ws3k8tjo#$91z*a#h+i@==1m_l16mkbyh2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['29c8-110-44-118-102.in.ngrok.io']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','29c8-110-44-118-102.in.ngrok.io']
 
 
 # Application definition
-
+from firebase_admin import initialize_app
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +39,48 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',  # for api
     'rest_framework.authtoken',
+    "fcm_django",   # for notifications <push notification>
+    'api',
 ]
+
+# FCM_DJANGO_SETTINGS = {
+#         "FCM_SERVER_KEY": "[your api key]"
+# }
+# for notifications
+# Optional ONLY IF you have initialized a firebase app already:
+# Visit https://firebase.google.com/docs/admin/setup/#python
+# for more options for the following:
+# Store an environment variable called GOOGLE_APPLICATION_CREDENTIALS
+# which is a path that point to a json file with your credentials.
+# Additional arguments are available: credentials, options, name
+FIREBASE_APP = initialize_app()
+# To learn more, visit the docs here:
+# https://cloud.google.com/docs/authentication/getting-started>
+
+FCM_DJANGO_SETTINGS = {
+    "FCM_SERVER_KEY": "BBgKDDnhJDEbgpLsgCrX1MvDs4ID5REX5XK2dZFGeVPxWV-2ynHPtTXDMYPUjy7tQxJHy0xrm1Wp1RgiRPfqA5I",
+     # default: _('FCM Django')
+    "APP_VERBOSE_NAME": "[string for AppConfig's verbose_name]",
+     # true if you want to have only one active device per registered user at a time
+     # default: False
+    "ONE_DEVICE_PER_USER": False,   # True/False
+     # devices to which notifications cannot be sent,
+     # are deleted upon receiving error response from FCM
+     # default: False
+    "DELETE_INACTIVE_DEVICES": False,   # True/False
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 # REST_FRAMEWORK = {
 #    'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -74,7 +115,7 @@ ROOT_URLCONF = 'uzme_backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

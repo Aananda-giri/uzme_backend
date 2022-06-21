@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-messaging.js"></script>
+    <script src="/static/js/firebase-messaging-sw.js"></script> -->
+    <script>
+
+// Import the functions you need from the SDKs you need
+importScripts("https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js");\
+importScripts("https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js");\
+var firebaseConfig = {\
+apiKey: "AIzaSyDj4xR6oaa7ylG2NmOc4R40FU_h3YmzT4k",\
+authDomain: "uzme-aec88.firebaseapp.com",\
+projectId: "uzme-aec88",\
+storageBucket: "uzme-aec88.appspot.com",\
+messagingSenderId: "557984028016",\
+appId: "1:557984028016:web:101b8e8364cfe7783f2bb5",\
+measurementId: "G-VZW1GPHPMJ"\
+};
+firebase.initializeApp(firebaseConfig);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-analytics.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+
+// Your web app's Firebase configuration
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyDj4xR6oaa7ylG2NmOc4R40FU_h3YmzT4k",
+
+  authDomain: "uzme-aec88.firebaseapp.com",
+
+  projectId: "uzme-aec88",
+
+  storageBucket: "uzme-aec88.appspot.com",
+
+  messagingSenderId: "557984028016",
+
+  appId: "1:557984028016:web:101b8e8364cfe7783f2bb5",
+
+  measurementId: "G-VZW1GPHPMJ"
+
+};
+
+
+// Initialize Firebase
+
+const app = initializeApp(firebaseConfig);
+
+const analytics = getAnalytics(app);
+
+</script>
+</head>
+<body>
+    
+</body>
+</html>

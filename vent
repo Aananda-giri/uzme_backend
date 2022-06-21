@@ -6,6 +6,77 @@ ngrok.com
 ./ngrok help
 
 - notification
-- delete user
+- research form resubmission
 - map implementation
+- delete user
+- location of user
+- extrovert thinking (take care of those around)
 
+front_end: team work
+idea
+
+install firebase cli
+firebase push notifications
+push notificatoin using django
+
+install jre
+sudo apt install openjdk-8-jre
+
+download openstreet jargon file
+
+
+flutter notification:
+- firebase messenging <flutter plugin>
+- 
+
+connect flutter and firebase:
+https://www.youtube.com/watch?v=EXp0gq9kGxI
+
+send djangoo push notification
+https://www.youtube.com/watch?v=RXK3O0ONJv0&t=312s
+
+resource: https://firebase.google.com/docs/cloud-messaging
+
+
+# Tutorial 3
+manipulating vap data
+
+android tools:
+shapely library
+mapbox -> part of leaflet <python library>
+    - visualization
+TURF.JS -> FEATUE EXTRACTON
+osmnx -> datat processing
+
+# npm inside nvm
+https://tecadmin.net/how-to-install-nvm-on-ubuntu-20-04/
+
+open source:
+ - source that is open <not free>, <vs_code>
+ - <redhat> enterprise (royaltu to redhat)
+ - gnu <>data sharing, open source
+ - wikipedia <>
+
+arcitecture and extendibility
+
+https://console.firebase.google.com/project/hackfestnoti/notification/compose
+
+
+resesarch form
+adobe XD -> flutter exportable code
+vs code live sharing
+
+firebase app:
+https://petercoding.com/firebase/2020/02/06/get-started-with-firebase-in-flutter/
+
+NOTIFICATION python + firebase-admin
+https://medium.com/@smbhuin/push-notification-firebase-python-8a65c47d3020
+
+firebase app:
+https://console.firebase.google.com/project/nadir-d4ec4/settings/general/android:com.example.nadir
+
+firebase_notification_page:
+https://console.firebase.google.com/project/nadir-d4ec4/notification/compose
+
+waste management: 
+systoll
